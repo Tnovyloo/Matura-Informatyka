@@ -1,0 +1,3 @@
+Zadanie 6.1
+Minimalna wartosc to 7
+Maksymalna wartosc to 221

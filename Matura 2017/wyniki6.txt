@@ -1,0 +1,12 @@
+Zadanie 6.1
+Minimalna wartosc to 7
+Maksymalna wartosc to 221
+
+Zadanie 6.2
+Ilosc wierszy do usuniecia 149
+
+Zadnie 6.3
+Ilosc pikseli 0
+
+Zadanie 6.4
+Najdluzsza linia pionowa 5
