@@ -1,7 +1,7 @@
 def rozloz(n):
     czynniki = []
     k = 2
-    #Pierwszy warunek 'n' jest rozne od 1
+    #Pierwszy warunek 'n' jest rozny od 1
     while n != 1:
         #Wejdz w petle kiedy reszta z dzielenia przez 'k' daje 0
         while n % k == 0:
