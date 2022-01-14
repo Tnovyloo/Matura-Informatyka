@@ -10,3 +10,19 @@ def czy_pierwsza(n):
     return True
 
 print(czy_pierwsza(89))
+
+def test(x):
+    liczby = []
+    for i in range(0, x):
+        liczby.append(i)
+
+    liczby_pierwsze = []
+    for i in range(0, x):
+        if czy_pierwsza(i):
+            liczby_pierwsze.append(i)
+        else:
+            continue
+
+    print(liczby_pierwsze)
+
+print(test(100000))
