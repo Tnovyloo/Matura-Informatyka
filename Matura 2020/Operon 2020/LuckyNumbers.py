@@ -31,12 +31,24 @@ def create_luckyTab():
     return lucky_tab
 
 
+
 with open('dane.txt', 'r') as file:
     count = 0
     numbers = create_luckyTab()
-
+    temp_list = []
+    maximal = 0
+    length = 0
     for line in file:
         if lucky_numbers(int(line), numbers):
+            temp_list.append(line)
+            maximal += 1
             count += 1
+            if length > maximal:
+                maximal = length
+                pierwsza = temp_list[0]
+        else:
+            temp_list.clear()
+            length = 0
 
-    print("4.1 zadanie: ", count)
+print("4.1 zadanie: ", count)
+print("4.2 zadanie: ", maximal, pierwsza)
