@@ -30,6 +30,33 @@ def create_luckyTab():
 
     return lucky_tab
 
+#Wlasny algorytm na szukanie liczby pierwszej
+
+# def dzielniki_liczby(n):
+#     dzielniki = []
+#     for i in range(1,n+1):
+#         if n % i == 0:
+#             dzielniki.append(i)
+#         else:
+#             continue
+#     return dzielniki
+#
+# def prime_number(n):
+#     # print(dzielniki_liczby(n))
+#     if len(dzielniki_liczby(n)) == 2:
+#         return True
+#     else:
+#         return False
+#
+# print(prime_number(13))
+
+def prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n/2)):
+        if n % i == 0:
+            return False
+    return True
 
 
 with open('dane.txt', 'r') as file:
@@ -38,17 +65,24 @@ with open('dane.txt', 'r') as file:
     temp_list = []
     maximal = 0
     length = 0
+    first = None
+    primes = 0
     for line in file:
         if lucky_numbers(int(line), numbers):
+            if prime(int(line)):
+                primes += 1
+            # if prime_number(int(line)):
+            #     primes += 1
             temp_list.append(line)
-            maximal += 1
+            length += 1
             count += 1
             if length > maximal:
                 maximal = length
-                pierwsza = temp_list[0]
+                first = temp_list[0]
         else:
             temp_list.clear()
             length = 0
 
 print("4.1 zadanie: ", count)
-print("4.2 zadanie: ", maximal, pierwsza)
+print("4.2 zadanie: ", maximal, first)
+print("4.3 zadanie: ", primes)
