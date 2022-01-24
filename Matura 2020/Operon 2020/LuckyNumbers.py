@@ -1,4 +1,3 @@
-
 def lucky_numbers(n, lucktab):
     for number in lucktab:
         if n == number:
