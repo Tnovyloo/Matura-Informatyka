@@ -1,5 +1,9 @@
 country = dict()
 premises_list = list()
+zad43_max = 0
+zad43_min = 0
+zad43_city_max = ''
+zad43_city_min = ''
 
 with open('galerie.txt', 'r') as file:
     for line in file:
@@ -12,7 +16,7 @@ with open('galerie.txt', 'r') as file:
             country[temp[0]] = 1 # Jezeli nie to go dodaj
 
         #   Zadanie 4.2a
-        full_place = dim1 = dim2 = 0 # Zmienna calej powierzchni, dlugosci i szerokosci, oraz lokali
+        full_place = dim1 = dim2 = count_premises = 0 # Zmienna calej powierzchni, dlugosci i szerokosci, oraz lokali
         premises = set()
         for x in range(2, 142): # Dla dlugosci wynikajacej z polecen zadania
             if x % 2 == 0: # Nadawanie dlugosci
@@ -20,9 +24,10 @@ with open('galerie.txt', 'r') as file:
             else: # Nadawanie szerokosci
                 dim2 = int(temp[x])
                 if dim2 != 0: # Iteruj lokale jesli one istnieja
-                    premises += 1
+                    count_premises += 1
+                    premises.add(dim1 * dim2)
                 full_place += dim1 * dim2 # Sumuj powierzchnie kolejnych lokali
-        premises_list.append((temp[1], full_place, premises))
+        premises_list.append((temp[1], full_place, count_premises))
 
         #   Zadanie 4.2b
         max_gallery = min_gallery = 0 # Zmienne do min i max galerii
@@ -37,6 +42,12 @@ with open('galerie.txt', 'r') as file:
                 min_gallery = x[1]
 
         #   Zadanie 4.3
+        if len(premises) > zad43_max or zad43_max == 0:
+            zad43_max = len(premises)
+            zad43_city_max = temp[1]
+        if len(premises) < zad43_min or zad43_min == 0:
+            zad43_min = len(premises)
+            zad43_city_min = temp[1]
 
 
 def save_to_txt():
@@ -57,5 +68,8 @@ def save_to_txt():
         file.write(f'{city_max} {max_gallery}\n'
                    f'{city_min} {min_gallery}')
 
+    with open("wynik4_3.txt", "w") as file:
+        file.write(f"{zad43_city_min} {zad43_min}\n"
+                   f"{zad43_city_max} {zad43_max}")
 
 save_to_txt()
