@@ -53,4 +53,12 @@ def check_for_reply3(numbers_oct):
     print(f'dlugosc {length}, wynik osemkowy: max {oct(maximal)[2:]}, min {oct(minimal)[2:]}')
     print(f'dlugosc {length}, wynik dziesietny: max {maximal}, min {minimal}')
 
+    return f'dlugosc {length}, wynik osemkowy: max {oct(maximal)[2:]}, min {oct(minimal)[2:]}\ndlugosc {length}, wynik dziesietny: max {maximal}, min {minimal}'
+
 check_for_reply3(list_of_numbers)
+
+with open('odpowiedzi2013', 'a') as file:
+    file.writelines(f"{str(check_for_reply1(list_of_numbers))}\n")
+    file.writelines(f"{str(check_for_reply2(list_of_numbers))}\n")
+    file.writelines(f"{str(check_for_reply3(list_of_numbers))}\n")
+
