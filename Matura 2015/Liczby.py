@@ -100,5 +100,5 @@ for liczba in list:
         min = len(liczba); krotkie = [liczba]
     if len(liczba) > max:
         max = len(liczba); dlugie = [liczba]
-print(list.index(((krotkie)) + 1))
-print(list.index(((dlugie)) + 1))
+print(list.index((int(krotkie)) + 1))
+print(list.index((int(dlugie)) + 1))
