@@ -41,6 +41,7 @@ def cesar_code_exercise3(data):
             for k in range(0, 26): # in range of alphabet
                 result = ''
                 for i in word:
+                    #Code word for specific 'k' ,'k' is specific letter on alphabet
                     result += chr(((ord(i)-65+k)%26)+65)
                 if result == word_coded:
                     boolean = True
