@@ -1,12 +1,12 @@
 def cesar_code_exercise1(data):
     changed_data = []
     k = 107
-    char = ord('Z') - ord('A') + 1
-    a = ord('A')
-    for word in data:
-        text = str()
-        for j in word:
-            text += (str(chr((ord(j) - a + k)%char + a) + ""))
+    alphabet_len = ord('Z') - ord('A') + 1 # Długość alfabetu
+    a = ord('A') # Liczba 65
+    for word in data: # Dla słowa w pliku
+        text = str() # Tworzymy zmienna do przechowywania tekstu
+        for char in word:
+            text += (str(chr((ord(char) - a + k)%alphabet_len + a) + "")) # zmienamy liczbe ord(char) - a czyli 65 w ascii + dodajemy klucz i bierzemy reszte z dzielenia przez 26 (dlugosc alfabetu) i zmieniamy ta wartosc na liczbe w ascii
         changed_data.append(text)
     return changed_data
 
