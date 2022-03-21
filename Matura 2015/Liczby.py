@@ -87,18 +87,20 @@ indeks_min = convert_list.index(minimalna)
 print(f"Minimalna to: {indeks_min}\n"
       f"Maksymalna to: {indeks_max}")
 
-min = -1
-max = 260
-krotkie = []
-dlugie = []
+minimum = -1
+maximum = 260
+short = []
+long = []
+
 for liczba in list:
-    if len(liczba) == min:
-        krotkie.append(liczba)
-    if len(liczba) == max:
-        dlugie.append(liczba)
-    if len(liczba) < min:
-        min = len(liczba); krotkie = [liczba]
-    if len(liczba) > max:
-        max = len(liczba); dlugie = [liczba]
-print(list.index((int(krotkie)) + 1))
-print(list.index((int(dlugie)) + 1))
+    if len(liczba) == minimum:
+        short.append(liczba)
+    if len(liczba) == maximum:
+        long.append(liczba)
+    if len(liczba) < minimum:
+        minimum = len(liczba); short = [liczba]
+    if len(liczba) > maximum:
+        maximum = len(liczba); long = [liczba]
+
+print(list.index((int(short)) + 1))
+print(list.index((int(long)) + 1))

@@ -31,6 +31,7 @@ for slowo in sygnaly:
     chars = []
     for litera in slowo:
         if chars.__contains__(litera): #Jesli lista zawiera litere to jej nie dodawaj
+            # __contains__ specjalna metoda do sprawdzenia czy dany str jest zawarty w str
             continue
         chars.append(litera)
         k += 1
