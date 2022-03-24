@@ -14,7 +14,7 @@ code_dict_helper = {
 with open('kody.txt','r') as file:
     numbers_from_file = [line.rstrip() for line in file]
 
-def sum_of_odd_and_even(numbers):
+def function(numbers):
     temp_list = []
     controll_numbers = []
     encrypted_numbers = []
@@ -40,7 +40,7 @@ def sum_of_odd_and_even(numbers):
         encrypted_numbers.append(encrypted_text)
     return temp_list, controll_numbers, encrypted_numbers
 
-answer1, answer2, answer3 = sum_of_odd_and_even(numbers_from_file)
+answer1, answer2, answer3 = function(numbers_from_file)
 print(answer3)
 
 test = '110110101010101110111010111011101010101011101011101110111010101010111010101110111010101011101010101110111011010110'
