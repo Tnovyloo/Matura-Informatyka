@@ -17,7 +17,9 @@ with open('kody.txt','r') as file:
 def sum_of_odd_and_even(numbers):
     temp_list = []
     controll_numbers = []
+    encrypted_numbers = []
     for number in numbers:
+        # 6.1 solved problem
         sum_of_odd = 0
         sum_of_even = 0
         for i in range(1, len(number) + 1):
@@ -26,10 +28,20 @@ def sum_of_odd_and_even(numbers):
             else:
                 sum_of_odd += int(number[i-1])
         temp_list.append(f'{sum_of_even} {sum_of_odd}, number - {number}')
+        # 6.2 solved problem
         controlled_num = (10 - (((sum_of_even * 3) + sum_of_odd) % 10)) % 10
         controll_numbers.append(f'{controlled_num} {code_dict_helper.get(str(controlled_num))}')
-    return temp_list, controll_numbers
+        # 6.3 solved problem
+        encrypted_text = '11011010'
+        for num in number:
+            encrypted_text += str(code_dict_helper.get(str(num)))
+        encrypted_text += str(code_dict_helper.get(str(controlled_num)))
+        encrypted_text += '11010110'
+        encrypted_numbers.append(encrypted_text)
+    return temp_list, controll_numbers, encrypted_numbers
 
-list1, list2 = sum_of_odd_and_even(numbers_from_file)
-print(list2)
+answer1, answer2, answer3 = sum_of_odd_and_even(numbers_from_file)
+print(answer3)
 
+test = '110110101010101110111010111011101010101011101011101110111010101010111010101110111010101011101010101110111011010110'
+print(test == answer3[0])
