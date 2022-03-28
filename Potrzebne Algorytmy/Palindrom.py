@@ -9,3 +9,11 @@ def palindrom(slowo):
         return print(f"Nie jest palindromem")
 
 palindrom('kajak')
+
+def check_palindrome(word):
+    if word == word[::-1]:
+        return True
+    else:
+        return False
+
+check_palindrome('kajak')
