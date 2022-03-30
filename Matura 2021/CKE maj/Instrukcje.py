@@ -69,7 +69,6 @@ def przesun(tekst, litera):
     txtlist[index] = litera  # podmienic znak
     return "".join(txtlist)  # i zwrocic ja jako ciag znakow
 
-
 def zadanie4_4(lista):
     result = ''
     for var in lista:
