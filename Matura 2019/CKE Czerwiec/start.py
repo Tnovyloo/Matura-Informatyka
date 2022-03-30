@@ -25,13 +25,12 @@ def weight_1_prime(number):
 
 #4.1
 prime_numbers = [int(number) for number in numbers if check_prime_number(int(number)) and 100 < int(number) < 5000]
-print(prime_numbers)
+print(f'4.1 - {prime_numbers}')
 
 #4.2
 reverse_primes = [int(number) for number in primes if check_prime_number(int(number[::-1]))]
-print(reverse_primes)
+print(f'4.2 - {reverse_primes}')
 
 #4.3
 weight_1_primes = [int(number) for number in primes if weight_1_prime(number)]
-print(weight_1_primes)
-print(len(weight_1_primes)+1)
+print(f'4.3 Length - {weight_1_primes+1} - Numbers - {weight_1_primes}')
