@@ -13,7 +13,7 @@ def compare_last_number(data1, data2):
             count += 1
     return count
 
-print(compare_last_number(datafile1, datafile2))
+print(f'4.1: {compare_last_number(datafile1, datafile2)}')
 
 #4.2
 def even_and_odd(data1, data2):
@@ -31,7 +31,7 @@ def even_and_odd(data1, data2):
             count += 1
     return count
 
-print(even_and_odd(datafile1, datafile2))
+print(f'4.2: {even_and_odd(datafile1, datafile2)}')
 
 #4.3
 def count_same_sequences(data1, data2):
@@ -45,7 +45,7 @@ def count_same_sequences(data1, data2):
             indexes.append(sequence+1)
     return count, indexes
 
-print(count_same_sequences(datafile1, datafile2))
+print(f'4.3: {count_same_sequences(datafile1, datafile2)}')
 
 #4.4
 def merge_data(data1, data2):
@@ -56,4 +56,4 @@ def merge_data(data1, data2):
         result.append(sorted(data1[sequence] + data2[sequence]))
     return result
 
-print(merge_data(datafile1, datafile2))
+print(f'4.4: {merge_data(datafile1, datafile2)}')
