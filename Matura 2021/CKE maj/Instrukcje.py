@@ -1,77 +1,85 @@
-instrukcje = [] #W niej przechowujemy wszystkie instrukcje
+from collections import Counter
+
 with open('instrukcje.txt', 'r') as file:
-    for line in file:
-        instrukcje.append(line.strip())
+    instructions_data = [line.rstrip() for line in file]
 
-def zadanie4_1(lista):
-    dlugosc = 0
-    for var in lista:
+def exercise1(instructions):
+    length = 0
+    for var in instructions:
         if var.__contains__('DOPISZ'):
-            dlugosc += 1
+            length += 1
         if var.__contains__('USUN'):
-            dlugosc -= 1
-    return dlugosc
+            length -= 1
+    return length
 
-def zadanie4_2(lista):
-    max = 0
+def exercise2(instructions):
+    maximal = 0
     temp = 1
     text = ''
-    for var in range(len(lista)-1): #1999
-        if lista[var][0:3] == lista[var+1][0:3]:
+    for i in range(len(instructions)-1): #1999
+        if instructions[i][0:3] == instructions[i+1][0:3]:
             temp += 1
             # text = lista[var]
         else:
-            if temp > max:
-                max = temp
-                text = lista[var]
+            if temp > maximal:
+                maximal = temp
+                text = instructions[i]
             temp = 1
-    return max, text
+    return maximal, text
 
-def zadanie4_3(lista):
-    litery = {}
-    for var in lista:
-        rodzaj, znak = var.split()
-        if rodzaj == "DOPISZ":
-            if znak in litery:
-                litery[znak] += 1
-            else:
-                litery[znak] = 1
-    najczesciej_litera = None
-    najczesciej = 0
-    for litera in litery:
-        if litery[litera] > najczesciej:
-            najczesciej_litera = litera
-            najczesciej = litery[litera]
-    # skrócona wersja powyższego dla ciekawych:
-    # najczesciej = max(litery.items(), key=lambda x: x[1])
-    return najczesciej_litera, najczesciej
+def exercise3(instructions):
+    # letters = {}
+    # for var in lista:
+    #     instruction, char = var.split()
+    #     if instruction == "DOPISZ":
+    #         if char in letters:
+    #             letters[char] += 1
+    #         else:
+    #             letters[char] = 1
+    # most_common = None
+    # common = 0
+    # for litera in letters:
+    #     if letters[litera] > common:
+    #         most_common = litera
+    #         common = letters[litera]
+    # # skrócona wersja powyższego dla ciekawych:
+    # # najczesciej = max(litery.items(), key=lambda x: x[1])
+    # return most_common, common
 
-def dopisz(tekst, litera):
-    return tekst + litera
+    # Better solution:
+    add_commands = []
+    for command in instructions:
+        if command.__contains__('DOPISZ'):
+            add_commands.append(command)
+    result = Counter(add_commands).most_common(1)
+    return result
 
-def usun(tekst):
-    return tekst[:len(tekst)-1]
+def dopisz(text, char):
+    return text + char
 
-def zmien(tekst, litera): #funckja zmieniajaca ostatni znak
-    txtlist = list(tekst) #uwaga: w pythonie teksty musimy potraktowac jako liste
-    txtlist[len(tekst) - 1] = litera #jezeli chcemy podmienic znak na danej pozycji
+def usun(text):
+    return text[:len(text) - 1]
+
+def zmien(text, litera): #funckja zmieniajaca ostatni znak
+    txtlist = list(text) #uwaga: w pythonie teksty musimy potraktowac jako liste
+    txtlist[len(text) - 1] = litera #jezeli chcemy podmienic znak na danej pozycji
     return "".join(txtlist) #na koniec liste ta musimy zmienic z powrotem na tekst
 
-def przesun(tekst, litera):
-    index = tekst.find(litera)
+def przesun(tekst, char):
+    index = tekst.find(char)
     if index == -1:  # jezeli nie znalezlismy znaku, przerywamy dzialanie
         return tekst
-    if litera == 'Z':  # jezeli jest to ostatnia litera alfabetu, to wracamy na poczatek
-        litera = 'A'
+    if char == 'Z':  # jezeli jest to ostatnia litera alfabetu, to wracamy na poczatek
+        char = 'A'
     else:  # w przeciwnym przypadku przesuwamy znak o 1
-        litera = chr(ord(litera) + 1)
-    txtlist = list(tekst)  # nastepnie musimy ponownie zamienic text na liste znakow
-    txtlist[index] = litera  # podmienic znak
-    return "".join(txtlist)  # i zwrocic ja jako ciag znakow
+        char = chr(ord(char) + 1)
+    txt_list = list(tekst)  # nastepnie musimy ponownie zamienic text na liste znakow
+    txt_list[index] = char  # podmienic znak
+    return "".join(txt_list)  # i zwrocic ja jako ciag znakow
 
-def zadanie4_4(lista):
+def exercise4(instructions):
     result = ''
-    for var in lista:
+    for var in instructions:
         args = var.split(" ")
         char = args[1]
         command = args[0]
@@ -85,10 +93,10 @@ def zadanie4_4(lista):
             result = przesun(result, char)
     return result
 
-print(zadanie4_1(instrukcje))
-print(zadanie4_2(instrukcje))
-print(zadanie4_3(instrukcje))
-print(zadanie4_4(instrukcje))
+print(exercise1(instructions_data))
+print(exercise2(instructions_data))
+print(exercise3(instructions_data))
+print(exercise4(instructions_data))
 
 #TODO ZADANIE 4_4
 
