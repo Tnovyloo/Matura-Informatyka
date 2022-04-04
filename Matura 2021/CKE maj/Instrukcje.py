@@ -54,18 +54,18 @@ def exercise3(instructions):
     result = Counter(add_commands).most_common(1)
     return result
 
-def dopisz(text, char):
+def add(text, char):
     return text + char
 
-def usun(text):
+def delete(text):
     return text[:len(text) - 1]
 
-def zmien(text, litera): #funckja zmieniajaca ostatni znak
-    txtlist = list(text) #uwaga: w pythonie teksty musimy potraktowac jako liste
-    txtlist[len(text) - 1] = litera #jezeli chcemy podmienic znak na danej pozycji
-    return "".join(txtlist) #na koniec liste ta musimy zmienic z powrotem na tekst
+def change(text, litera): #funckja zmieniajaca ostatni znak
+    txt_list = list(text) #uwaga: w pythonie teksty musimy potraktowac jako liste
+    txt_list[len(text) - 1] = litera #jezeli chcemy podmienic znak na danej pozycji
+    return "".join(txt_list) #na koniec liste ta musimy zmienic z powrotem na tekst
 
-def przesun(tekst, char):
+def move_char(tekst, char):
     index = tekst.find(char)
     if index == -1:  # jezeli nie znalezlismy znaku, przerywamy dzialanie
         return tekst
@@ -84,20 +84,16 @@ def exercise4(instructions):
         char = args[1]
         command = args[0]
         if command == "DOPISZ":
-            result = dopisz(result, char)
+            result = add(result, char)
         if command == "ZMIEN":
-            result = zmien(result, char)
+            result = change(result, char)
         if command == "USUN":
-            result = usun(result)
+            result = delete(result)
         if command == "PRZESUN":
-            result = przesun(result, char)
+            result = move_char(result, char)
     return result
 
 print(exercise1(instructions_data))
 print(exercise2(instructions_data))
 print(exercise3(instructions_data))
 print(exercise4(instructions_data))
-
-#TODO ZADANIE 4_4
-
-# print(lista[0][0:3])
