@@ -1,15 +1,15 @@
-def anagram(slowo1, slowo2):
-    print(f"Długość słowa pierwszego {len(slowo1)},\n"
-          f"Długość słowa drugiego {len(slowo2)}.")
-    if len(slowo1) == len(slowo2):
+def anagram(word1, word2):
+    print(f"Długość słowa pierwszego {len(word1)},\n"
+          f"Długość słowa drugiego {len(word2)}.")
+    if len(word1) == len(word2):
         templist = []
         templist2 = []
-        for char in slowo1:
+        for char in word1:
             templist.append(str(char).lower())
-        for char in slowo2:
+        for char in word2:
             templist2.append(str(char).lower())
         if sorted(templist) == sorted(templist2):
-            return print(f'{slowo1} == {slowo2}')
+            return print(f'{word1} == {word2}')
     else:
         return print('Słowa mają inną długość')
 

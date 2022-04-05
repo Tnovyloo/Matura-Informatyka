@@ -1,23 +1,23 @@
-def dzielniki(n):
-    liczba = n
-    dzielniki = []
+def divisors(n):
+    number = n
+    divisors = []
     for x in range(n+1):
         if x != 0 and x != n:
             if n % x == 0:
-                dzielniki.append(x)
+                divisors.append(x)
         else:
             continue
-    return dzielniki
+    return divisors
 
-def czy_doskonala(n):
-    lista = dzielniki(n)
+def ideal_number(n):
+    list_of_divisors = divisors(n)
     print(f"Dzielniki liczb mniejsze od liczby '{n}'\n"
-          f"{dzielniki(n)}")
+          f"{divisors(n)}")
     # print(sum(dzielniki(n)))
-    if sum(lista) == n:
+    if sum(list_of_divisors) == n:
         print(f"Liczba {n} jest liczbą doskonałą")
     else:
         print(f"Liczba {n} nie jest liczbą doskonałą")
 
 
-czy_doskonala(int(input('Podaj liczbę,\nżeby sprawdzić czy jest doskonała: ')))
+ideal_number(int(input('Podaj liczbę,\nżeby sprawdzić czy jest doskonała: ')))

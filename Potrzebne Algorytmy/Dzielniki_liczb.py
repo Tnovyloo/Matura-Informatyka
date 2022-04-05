@@ -1,11 +1,11 @@
-def szukaj_dzielnikow(n):
-    dzielniki = []
+def find_divisors(n):
+    divisors = []
     for x in range(n+1):
         if x != 0:
             if n % x == 0:
-                dzielniki.append(x)
+                divisors.append(x)
         else:
             continue
-    return dzielniki
+    return divisors
 
-print(szukaj_dzielnikow(32))
+print(find_divisors(32))

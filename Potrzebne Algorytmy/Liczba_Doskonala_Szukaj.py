@@ -1,27 +1,27 @@
-def dzielniki(n):
-    liczba = n
-    dzielniki = []
+def divisors(n):
+    number = n
+    divs = []
     for x in range(n+1):
         if x != 0 and x != n:
             if n % x == 0:
-                dzielniki.append(x)
+                divs.append(x)
         else:
             continue
-    return dzielniki
+    return divs
 
-def czy_doskonala(n):
-    templist = dzielniki(n)
-    if sum(templist) == n and sum(templist) != 0:
+def check_ideal(n):
+    temp_list = divisors(n)
+    if sum(temp_list) == n and sum(temp_list) != 0:
         return n
     else:
         return None
 
-def zakres(n):
-    mainlist = []
+def range_of_user(n):
+    main_list = []
     for x in range(n+1):
-        y = czy_doskonala(x)
+        y = check_ideal(x)
         if y is not None:
-            mainlist.append(x)
-    return mainlist
+            main_list.append(x)
+    return main_list
 
-print(zakres(10000))
+print(range_of_user(10000))
