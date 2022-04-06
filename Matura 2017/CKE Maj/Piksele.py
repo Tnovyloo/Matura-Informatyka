@@ -8,7 +8,7 @@ zadanie6_4 = 0
 #Ogarnąc krotki/Tuple
 kordynaty = ((1,0),(-1,0),(0,1),(0,-1))
 
-with open("dane.txt",'r') as file:
+with open("dane.txt", 'r') as file:
     for linia in file:
         temp = linia.rstrip().split(" ")
         obraz.append([int(x) for x in temp])
