@@ -3,8 +3,6 @@ from math import sqrt
 with open('punkty.txt', 'r') as file:
     data_file = [line.rstrip().split() for line in file]
 
-print(data_file)
-
 def prime_number(number):
     if number == 2:
         return True
@@ -27,6 +25,7 @@ def distance_of_points(a, b):
     distance = round(sqrt((pow(int(b[0]) - int(a[0]), 2) + pow(int(b[1]) - int(a[1]), 2))), 0)
     return distance
 
+#4.1
 def find_primes(data):
     primes = []
     for numbers in data:
@@ -34,10 +33,12 @@ def find_primes(data):
             primes.append(numbers)
     return primes
 
+#4.2
 def find_anagrams(data):
     anagrams = [numbers for numbers in data if anagram(numbers)]
     return anagrams
 
+#4.3
 def find_longest_distance(data):
     maximal_distance = 0
     p1 = []
@@ -57,6 +58,7 @@ def find_longest_distance(data):
                     p2.append(point_b)
     return p1, p2, maximal_distance
 
+#4.4
 def check_points_in_square(data):
     interior = 0
     exterior = 0
