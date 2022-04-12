@@ -1,7 +1,7 @@
 with open('tj.txt', 'r') as file:
     tekst_jawny = [line.rstrip() for line in file.readlines()]
 
-with open('klucze1.txt','r') as file:
+with open('klucze1.txt', 'r') as file:
     klucze1 = [line.rstrip() for line in file.readlines()]
 
 with open('klucze2.txt') as file:

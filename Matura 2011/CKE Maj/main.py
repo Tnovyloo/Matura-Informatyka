@@ -1,4 +1,4 @@
-with open('liczby.txt','r') as file:
+with open('liczby.txt', 'r') as file:
     file_lines = [line.rstrip() for line in file.readlines()]
 
 

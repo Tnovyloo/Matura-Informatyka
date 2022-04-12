@@ -1,6 +1,6 @@
 from collections import Counter
 
-with open('NAPIS.TXT','r') as file:
+with open('NAPIS.TXT', 'r') as file:
     file_lines = [line.rstrip() for line in file.readlines()]
 
 def is_prime(num):
