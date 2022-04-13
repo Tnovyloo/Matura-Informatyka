@@ -97,3 +97,9 @@ print(exercise1(instructions_data))
 print(exercise2(instructions_data))
 print(exercise3(instructions_data))
 print(exercise4(instructions_data))
+
+with open('odpowiedz','a') as file:
+    file.write(f'1\n{exercise1(instructions_data)}\n'
+               f'2\n{exercise2(instructions_data)}\n'
+               f'3\n{exercise3(instructions_data)}\n'
+               f'4\n{exercise4(instructions_data)}\n')

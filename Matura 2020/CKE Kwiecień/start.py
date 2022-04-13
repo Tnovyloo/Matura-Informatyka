@@ -35,3 +35,8 @@ print(sequence_of_gaps)
 
 result = Counter(seq_gaps).most_common()
 print(result)
+
+with open('odpowiedzi','a') as file:
+    file.write(f"1\n{max(seq_gaps), min(seq_gaps)}"
+               f"2\n{sequence_of_gaps}"
+               f"3\n{result}")

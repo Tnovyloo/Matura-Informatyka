@@ -85,3 +85,8 @@ with open('dane.txt', 'r') as file:
 print("4.1 zadanie: ", count)
 print("4.2 zadanie: ", maximal, first)
 print("4.3 zadanie: ", primes)
+
+with open("odpowiedzi",'a') as file:
+    file.write(f'4.1\n {count}'
+               f'4.2\n {maximal, first}'
+               f'4.3\n {primes}')

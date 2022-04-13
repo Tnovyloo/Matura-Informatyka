@@ -59,3 +59,8 @@ count_numbers_in_id(id_list)
 check_palindrome_in_list(id_list)
 # print(check_control_number('CIS459437'))
 run_control_algorithm(id_list)
+
+with open('odpowiedzi', 'a') as file:
+    file.write(f"1\n{count_numbers_in_id(id_list)}"
+               f"2\n{check_palindrome_in_list(id_list)}"
+               f"3\n{run_control_algorithm(id_list)}")
