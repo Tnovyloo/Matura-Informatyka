@@ -32,3 +32,14 @@ print(answer2(numbers_from_file))
 print(answer3(numbers_from_file))
 print(answer4(numbers_from_file))
 print(answer5(numbers_from_file))
+
+with open('odp','a') as file:
+    file.write(f'4.1 {answer1(numbers_from_file)}\n'
+               f'4.2 {answer2(numbers_from_file)}\n'
+               f'4.3 {answer3(numbers_from_file)}\n'
+               f'4.4 {answer4(numbers_from_file)}\n'
+               f'4.5 {answer5(numbers_from_file)}\n'
+               )
+
+
+

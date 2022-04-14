@@ -80,3 +80,9 @@ print(len(find_anagrams(data_file)))
 print(find_longest_distance(data_file))
 #4.4
 print(check_points_in_square(data_file))
+
+with open('odpowiedz','a') as file:
+    file.write(f'4.1 {len(find_primes(data_file))}\n'
+               f'4.2 {len(find_anagrams(data_file))}\n'
+               f'4.3 {find_longest_distance(data_file)}\n'
+               f'4.4 {check_points_in_square(data_file)}\n')

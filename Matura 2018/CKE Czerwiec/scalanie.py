@@ -57,3 +57,9 @@ def merge_data(data1, data2):
     return result
 
 print(f'4.4: {merge_data(datafile1, datafile2)}')
+
+with open('odpowiedz.txt','a') as file:
+    file.write(f'4.1: {compare_last_number(datafile1, datafile2)}\n'
+               f'4.2: {even_and_odd(datafile1, datafile2)}\n'
+               f'4.3: {count_same_sequences(datafile1, datafile2)}\n'
+               f'4.4: {merge_data(datafile1, datafile2)}\n')
