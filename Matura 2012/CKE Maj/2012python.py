@@ -63,3 +63,8 @@ print(decrypted)
 
 decrypted1 = deszyfruj(coded, klucze1)
 print(decrypted1)
+
+with open('odpowiedz','a') as file:
+    file.write(f"{coded}\n"
+               f"{decrypted}\n"
+               f"{decrypted1}")

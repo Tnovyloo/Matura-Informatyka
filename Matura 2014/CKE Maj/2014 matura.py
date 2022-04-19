@@ -37,3 +37,7 @@ count = Counter(file_lines)
 most_common = count.most_common(3)
 print(f'5.3: {most_common}')
 
+with open('odpowiedz','a') as file:
+    file.write(f"{len(primes_in_text)}\n"
+               f"{ascending_texts}\n"
+               f"{most_common}\n")

@@ -43,3 +43,8 @@ nine_len_numbers = [num for num in numbers if len(str(num)) == 9]
 print(f'4.1 - {len(even_numbers)}\n'
       f'4.2 - {bin(max(numbers))[2:]}, {oct(max(numbers))}\n'
       f'4.3 - {bin(sum(nine_len_numbers))[2:]}\n')
+
+with open('odpowiedz','a') as file:
+    file.write(f'4.1 - {len(even_numbers)}\n'
+      f'4.2 - {bin(max(numbers))[2:]}, {oct(max(numbers))}\n'
+      f'4.3 - {bin(sum(nine_len_numbers))[2:]}\n')
