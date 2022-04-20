@@ -45,3 +45,6 @@ print(answer3)
 
 test = '110110101010101110111010111011101010101011101011101110111010101010111010101110111010101011101010101110111011010110'
 print(test == answer3[0])
+
+with open('odpowiedz','a') as file:
+    file.write(f"{answer1},\n {answer2},\n {answer3}")
