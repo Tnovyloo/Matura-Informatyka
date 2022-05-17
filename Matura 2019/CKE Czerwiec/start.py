@@ -33,4 +33,4 @@ print(f'4.2 - {reverse_primes}')
 
 #4.3
 weight_1_primes = [int(number) for number in primes if weight_1_prime(number)]
-print(f'4.3 Length - {weight_1_primes+1} - Numbers - {weight_1_primes}')
+print(f'4.3 Length - {weight_1_primes} - Numbers - {weight_1_primes}')
